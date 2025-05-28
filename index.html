@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단축키 모음</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>단축키 모음</h1>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="단축키 검색...">
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#windows">Windows</a></li>
+            <li><a href="#text">Text</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="windows">
+            <h2>Windows 단축키</h2>
+            <div class="shortcut-grid">
+                <!-- Windows 단축키는 JavaScript로 동적 생성 -->
+            </div>
+        </section>
+
+        <section id="text">
+            <h2>Text 단축키</h2>
+            <div class="shortcut-grid">
+                <!-- Text 단축키는 JavaScript로 동적 생성 -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 단축키 모음. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JSON 데이터 로드
+        fetch('data/shortcuts.json')
+            .then(response => response.json())
+            .then(data => {
+                // 각 카테고리별로 단축키 표시
+                data.shortcuts.forEach(category => {
+                    const section = document.getElementById(category.category.toLowerCase());
+                    if (section) {
+                        const grid = section.querySelector('.shortcut-grid');
+                        category.shortcuts.forEach(shortcut => {
+                            const shortcutElement = document.createElement('div');
+                            shortcutElement.className = 'shortcut-item';
+                            shortcutElement.innerHTML = `
+                                <div class="key">${shortcut.key}</div>
+                                <div class="description">${shortcut.description}</div>
+                            `;
+                            grid.appendChild(shortcutElement);
+                        });
+                    }
+                });
+            });
+
+        // 검색 기능
+        document.getElementById('search').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const shortcutItems = document.querySelectorAll('.shortcut-item');
+            
+            shortcutItems.forEach(item => {
+                const key = item.querySelector('.key').textContent.toLowerCase();
+                const description = item.querySelector('.description').textContent.toLowerCase();
+                
+                if (key.includes(searchTerm) || description.includes(searchTerm)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
