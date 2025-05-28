@@ -1,0 +1,86 @@
+{
+  "shortcuts": [
+    {
+      "category": "Windows",
+      "shortcuts": [
+        {
+          "key": "Win + E",
+          "description": "파일 탐색기 열기"
+        },
+        {
+          "key": "Win + ↑",
+          "description": "현재 창 최대화"
+        },
+        {
+          "key": "Win + ↓",
+          "description": "현재 창 최소화 또는 이전 크기로 복원"
+        },
+        {
+          "key": "Win + ←",
+          "description": "창을 화면 왼쪽으로 스냅"
+        },
+        {
+          "key": "Win + →",
+          "description": "창을 화면 오른쪽으로 스냅"
+        },
+        {
+          "key": "Win + Ctrl + D",
+          "description": "새 가상 데스크톱 추가"
+        },
+        {
+          "key": "Win + Tab",
+          "description": "작업 보기 및 가상 데스크톱 전환"
+        }
+      ]
+    },
+    {
+      "category": "Text",
+      "shortcuts": [
+        {
+          "key": "Ctrl + B",
+          "description": "선택한 텍스트 굵게"
+        },
+        {
+          "key": "Ctrl + I",
+          "description": "선택한 텍스트 기울임꼴"
+        },
+        {
+          "key": "Ctrl + U",
+          "description": "선택한 텍스트 밑줄"
+        },
+        {
+          "key": "Ctrl + F",
+          "description": "텍스트 찾기"
+        },
+        {
+          "key": "Ctrl + H",
+          "description": "텍스트 찾기 및 바꾸기"
+        },
+        {
+          "key": "Ctrl + Home",
+          "description": "문서 시작 부분으로 이동"
+        },
+        {
+          "key": "Ctrl + End",
+          "description": "문서 끝 부분으로 이동"
+        },
+        {
+          "key": "Ctrl + ←",
+          "description": "단어 단위로 커서 이동(왼쪽)"
+        },
+        {
+          "key": "Ctrl + →",
+          "description": "단어 단위로 커서 이동(오른쪽)"
+        },
+        {
+          "key": "Ctrl + Shift + ←",
+          "description": "단어 단위로 텍스트 선택(왼쪽)"
+        },
+        {
+          "key": "Ctrl + Shift + →",
+          "description": "단어 단위로 텍스트 선택(오른쪽)"
+        }
+      ]
+    }
+  ]
+} 
